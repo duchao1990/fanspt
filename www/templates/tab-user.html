@@ -1,0 +1,61 @@
+<ion-view view-title="个人中心">
+  <ion-nav-buttons side="right">
+    <a class="button button-icon button-clear ion-ios-refresh-empty" ng-click="refresh()">
+    </a>
+  </ion-nav-buttons>
+  <ion-content has-subheader="false" class="has-header">
+
+    <div ng-if="isLogin" class="userdiv">
+      <div class="userlogo" style="background-image: url('{{imgurl}}');" ng-click="goset()"></div>
+      <center>{{nickname}}</center>
+    </div>
+    <div ng-if="!isLogin" class="nouser">
+      <center><button class="button button-assertive mybtn" ng-click="Wxlogin()">微信登陆</button></center>
+    </div>
+    <div class="bar-default mybar">
+        <div class="button-bar">
+          <a href="#/tab/bendi" class="button button-primary button-clear mybara">
+            <center class="mybari positive"><i class="iconfont icon-didian"></i></center>
+            <center class="mybars">本地</center>
+          </a>
+          <a href="#/tab/person" class="button button-primary button-clear mybara">
+            <center class="mybari energized"><i class="iconfont icon-person"></i></center>
+            <center class="mybars">个人号</center>
+          </a>
+          <a href="#/tab/qun" class="button button-primary button-clear mybara">
+            <center class="mybari calm"><i class="iconfont icon-gongzhong"></i></center>
+            <center class="mybars">群号</center>
+          </a>
+          <a href="#/tab/gzh" class="button button-primary button-clear mybara">
+            <center class="mybari assertive"><i class="iconfont icon-dtgongzhongpingtai"></i></center>
+            <center class="mybars">公众号</center>
+          </a>
+        </div>
+      </div>
+    <div class="list">
+      <a href="#/tab/tool" class="item item-icon-left">
+        <button class="button button-fab button-dark radius icon ion-hammer"></button>
+        佛教日历
+      </a>
+
+      <a href="#/tab/myuan" class="item item-icon-left">
+        <button class="button button-fab button-balanced radius icon ion-paper-airplane"></button>
+        我的祈愿
+      </a>
+      <a href="#/tab/workers" class="item item-icon-left">
+        <button class="button button-fab button-energized radius icon ion-ribbon-a"></button>
+        义工助手
+      </a>
+      <a href="#/tab/advice" class="item item-icon-left" >
+        <button class="button button-fab button-calm icon ion-compose radius"></button>
+        一键反馈
+      </a>
+      <a class="item item-icon-left" ng-click="LoginOut()">
+        <button class="button button-fab button-assertive icon ion-log-out radius icon-ml"></button>
+        退出登录
+      </a>
+    </div>
+
+  </ion-content>
+
+</ion-view>
